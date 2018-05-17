@@ -1,10 +1,9 @@
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Montserrat', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
     line-height: 1.5;
     letter-spacing: 1em;
@@ -22,10 +21,6 @@ h1 {
     padding-top: 100px;
     position: relative;
     z-index: 10;
-}
-
-.first-load-alt {
-    display: none;
 }
 
 img.first-load {
@@ -64,19 +59,15 @@ img.first-load {
 
 @media (max-width:900px) {
 
+    .btn {
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+        margin-top: -38px;
+        margin-left: -38px;
+    }
+
     .container {
         min-width: 100%;
-    }
-
-    img.first-load, .first-load, .btn {
-        display: none;
-    }
-
-    .first-load-alt {
-        display: block;
-    }
-    
-    .count {
-        display: none;
     }
 }
