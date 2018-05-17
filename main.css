@@ -79,6 +79,7 @@ img.first-load {
     bottom: 15%;
     left: 20%;
     right: 20%;
+    display: none;
 }
 
 .game-over-score {
