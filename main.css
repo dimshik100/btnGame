@@ -18,9 +18,9 @@ body {
 h1 {
     font-size: 25px;
     text-align: center;
-    padding-top: 100px;
     position: relative;
     z-index: 10;
+    padding: 90px 15px 0 15px;
 }
 
 img.first-load {
@@ -43,6 +43,29 @@ img.first-load {
 
 .btn:active {
     background-image: url(assets/butten-pressed.png)
+}
+
+.btn-g {
+    width: 150px;
+    height: 150px;
+    background-image: url(assets/buttenG-unpressed.png);
+    background-size: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -68px;
+    margin-left: -68px;
+    display: none;
+}
+
+.btn-g:active {
+    background-image: url(assets/buttenG-pressed.png)
+}
+
+.game-over {
+    display: none;
+    margin-top: 15%;
+    font-size: 14px;
 }
 
 .count {
@@ -75,7 +98,19 @@ img.first-load {
         margin-left: -38px;
     }
 
+    .btn-g {
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+        margin-top: -38px;
+        margin-left: -38px;
+    }
+
     .container {
         min-width: 100%;
+    }
+
+    .game-over {
+        margin-top: 37%;
     }
 }
