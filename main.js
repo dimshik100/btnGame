@@ -14,7 +14,7 @@ function moveBtn() {
     document.getElementById("btn").style.top = randomTop + "%";
     document.getElementById("btn").style.left = randomLeft + "%";
     document.getElementById("count").innerHTML = "Score: " + count;
-    if (count > 49) {
+    if (count > 19) {
         while (true) {
             randomTopG = Math.random() * 60 + 20;
             randomLeftG = Math.random() * 60 + 20;
@@ -28,7 +28,13 @@ function moveBtn() {
     }
 }
 
+function gameOverScore() {
+    document.getElementById("finalScore").innerHTML = count;
+    document.getElementById("gameOverScore").style.display = "block";
+}
+
 function gameOver() {
+    document.getElementById("gameOverScore").style.display = "none";
     document.getElementById("btnG").style.display = "none";
     count = 0;
     document.getElementById("count").innerHTML = "Score: " + count;

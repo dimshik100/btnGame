@@ -6,7 +6,7 @@ body {
     font-family: 'Montserrat', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
     line-height: 1.5;
-    letter-spacing: 1em;
+    letter-spacing: 0.5em;
 }
 
 .container {
@@ -16,11 +16,25 @@ body {
 }
 
 h1 {
+    padding: 30px 0;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+h2 {
     font-size: 25px;
+    letter-spacing: 1em;
     text-align: center;
     position: relative;
     z-index: 10;
     padding: 90px 15px 0 15px;
+}
+
+h3 {
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.5em;
 }
 
 img.first-load {
@@ -70,6 +84,20 @@ img.first-load {
     right: 20%;
 }
 
+.game-over-score {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: fixed;
+    padding: 10%;
+    top:1%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+    z-index: 20;
+    display: none;
+}
+
 .count {
     border: 0.5px solid darkgrey;
     background-color: lightgray;
@@ -110,5 +138,10 @@ img.first-load {
 
     .container {
         min-width: 100%;
+    }
+
+    h2 {
+        font-size: 20px;
+        letter-spacing: 0.5em;
     }
 }

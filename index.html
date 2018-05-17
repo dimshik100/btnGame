@@ -14,12 +14,19 @@
 <body>
 
     <section class="container">
-        <h1 class="first-load">Press Me</h1>
+        <h2 class="first-load">Press Me</h2>
         <img src="assets/arrow.gif" alt="arrow" class="first-load">
-        <div class="btn" onclick="moveBtn()" id="btn"></div>
-        <div class="btn-g" onclick="gameOver()" id="btnG"></div>
-        <h1 class="game-over" id="gameOver">Not the Green one...</h1>
     </section>
+
+    <div class="btn" onclick="moveBtn()" id="btn"></div>
+    <div class="btn-g" onclick="gameOverScore()" id="btnG"></div>
+    <h2 class="game-over" id="gameOver">Not the Green one...</h2>
+    <div class="game-over-score" id="gameOverScore" onclick="gameOver()">
+        <h2>You lost... too bad...<br>
+        Your score was:</h2>
+        <h1 id="finalScore">*</h1>
+        <h3>(click anywhere)</h3>
+    </div>
 
     <p class="count" id="count">Score: 0</p>
     <a href="https://www.facebook.com/studiosanbira/" title="facebook" target="_blank">
