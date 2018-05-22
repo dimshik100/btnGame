@@ -1,12 +1,33 @@
 
 var firstLoad = document.getElementsByClassName("first-load");
 var count = 0;
-var btnG;
+var topScore = 0;
+var btnG, sec;
+
+function startTimer() {
+    var x = setInterval(function () {
+        sec--;
+        document.getElementById("timer").innerHTML = "time: " + sec + "s";
+        if (sec <= 5) {
+            document.getElementById("timer").style.color = "red";
+        }
+        if (sec === 0) {
+            gameOverScore();
+            clearInterval(x);
+        }
+    }, 1000);
+}
+
 function moveBtn() {
     var randomTop, randomLeft, randomTopG, randomLeftG;
     randomTop = Math.random() * 60 + 20;
     randomLeft = Math.random() * 60 + 20;
     count++;
+    if (count === 1) {
+        document.getElementById("timer").style.color = "black";
+        sec = 20;
+        startTimer();
+    }
     if (count % 20 === 0 || count === 10) {
         document.getElementById("wraperG").innerHTML += '<div class="btn-g" onclick="gameOverScore()"></div>';
     }
@@ -35,9 +56,14 @@ function moveBtn() {
 function gameOverScore() {
     document.getElementById("finalScore").innerHTML = count;
     document.getElementById("gameOverScore").style.display = "block";
+    if (count > topScore) {
+        topScore = count;
+        document.getElementById("topScore").innerHTML = "top score: " + topScore;
+    }
 }
 
 function gameOver() {
+    document.getElementById("timer").innerHTML = " ";
     document.getElementById("gameOverScore").style.display = "none";
     document.getElementById("wraperG").innerHTML = " ";
     count = 0;

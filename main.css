@@ -6,7 +6,6 @@ body {
     font-family: 'Montserrat', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
     line-height: 1.5;
-    letter-spacing: 0.5em;
     text-align: center;
 }
 
@@ -100,12 +99,27 @@ img.first-load {
     border: 0.5px solid darkgrey;
     background-color: lightgray;
     border-radius: 5px;
-    letter-spacing: 0.5em;
-    padding: 5px 20px;
+    padding: 5px 15px;
     margin: 5px;
     position: fixed;
     bottom: 0;
     right: 0;
+}
+
+.timer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 5px 15px;
+    margin: 5px;
+}
+
+.top-score {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    margin: 5px;
 }
 
 .logo {
