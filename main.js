@@ -25,7 +25,7 @@ function moveBtn() {
     count++;
     if (count === 1) {
         document.getElementById("timer").style.color = "black";
-        sec = 20;
+        sec = 60;
         startTimer();
     }
     if (count % 20 === 0 || count === 10) {
