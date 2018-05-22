@@ -1,12 +1,15 @@
 
 var firstLoad = document.getElementsByClassName("first-load");
 var count = 0;
-
+var btnG;
 function moveBtn() {
     var randomTop, randomLeft, randomTopG, randomLeftG;
     randomTop = Math.random() * 60 + 20;
     randomLeft = Math.random() * 60 + 20;
     count++;
+    if (count % 20 === 0 || count === 10) {
+        document.getElementById("wraperG").innerHTML += '<div class="btn-g" onclick="gameOverScore()"></div>';
+    }
     for (let i = 0; i < firstLoad.length; i++) {
         firstLoad[i].style.display = "none";
     }
@@ -14,7 +17,8 @@ function moveBtn() {
     document.getElementById("btn").style.top = randomTop + "%";
     document.getElementById("btn").style.left = randomLeft + "%";
     document.getElementById("count").innerHTML = "Score: " + count;
-    if (count > 19) {
+    btnG = document.getElementsByClassName("btn-g");
+    for (let i = 0; i < btnG.length; i++) {
         while (true) {
             randomTopG = Math.random() * 60 + 20;
             randomLeftG = Math.random() * 60 + 20;
@@ -22,9 +26,9 @@ function moveBtn() {
                 break;
             }
         }
-        document.getElementById("btnG").style.top = randomTopG + "%";
-        document.getElementById("btnG").style.left = randomLeftG + "%";
-        document.getElementById("btnG").style.display = "block";
+        btnG[i].style.top = randomTopG + "%";
+        btnG[i].style.left = randomLeftG + "%";
+        btnG[i].style.display = "block";
     }
 }
 
@@ -35,7 +39,7 @@ function gameOverScore() {
 
 function gameOver() {
     document.getElementById("gameOverScore").style.display = "none";
-    document.getElementById("btnG").style.display = "none";
+    document.getElementById("wraperG").innerHTML = " ";
     count = 0;
     document.getElementById("count").innerHTML = "Score: " + count;
     document.getElementById("btn").style.top = "50%";
