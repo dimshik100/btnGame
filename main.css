@@ -39,7 +39,7 @@ img.first-load {
     display: block;
 }
 
-.btn {
+.btn-red {
     width: 150px;
     height: 150px;
     background-image: url(assets/butten-unpressed.png);
@@ -51,11 +51,11 @@ img.first-load {
     margin-left: -68px;
 }
 
-.btn:active {
+.btn-red:active {
     background-image: url(assets/butten-pressed.png)
 }
 
-.btn-g {
+.btn-green {
     width: 150px;
     height: 150px;
     background-image: url(assets/buttenG-unpressed.png);
@@ -68,11 +68,11 @@ img.first-load {
     display: none;
 }
 
-.btn-g:active {
+.btn-green:active {
     background-image: url(assets/buttenG-pressed.png)
 }
 
-.game-over {
+.new-game {
     font-size: 14px;
     position: fixed;
     bottom: 15%;
@@ -132,7 +132,7 @@ img.first-load {
 
 @media (max-width:900px) {
 
-    .btn {
+    .btn-red {
         width: 80px;
         height: 80px;
         background-size: 80px;
@@ -140,7 +140,7 @@ img.first-load {
         margin-left: -38px;
     }
 
-    .btn-g {
+    .btn-green {
         width: 80px;
         height: 80px;
         background-size: 80px;
