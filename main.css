@@ -64,8 +64,7 @@ img.first-load {
     top: 50%;
     left: 50%;
     margin-top: -68px;
-    margin-left: -68px;
-    display: none;
+    margin-left: -68px;    
 }
 
 .btn-green:active {

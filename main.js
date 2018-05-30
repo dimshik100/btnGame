@@ -4,7 +4,7 @@ let topScore = 0;
 let sec = 0;
 const arrOfBtnGreen = [];
 const firstLoad = document.querySelectorAll(".first-load");
-
+const wrapper = document.querySelector(".wraper");
 function startTimer() {
     let x = setInterval(function () {
         sec--;
@@ -29,14 +29,6 @@ let btnRed = {
     radius: 16
 }
 
-let btnGreen = {
-    elements: document.querySelectorAll(".btn-green"),
-    elementHTML: '<div class="btn-green" onclick="showGameOverScreen()"></div>',
-    x: 0,
-    y: 0,
-    radius: 16
-}
-
 function moveBtnRed() {
     btnRed.x = Math.random() * 60 + 20;
     btnRed.y = Math.random() * 60 + 20;
@@ -53,14 +45,23 @@ function moveBtnRed() {
 
 function moveBtnGreen() {
     if (count % 10 === 0) {
+        let btnElement = document.createElement('DIV');
+        btnElement.setAttribute('class','btn-green');
+        btnElement.setAttribute('onclick','showGameOverScreen()');
+        let btnGreen = {
+            element: btnElement,
+            x: 0,
+            y: 0,
+            radius: 16
+        }
         arrOfBtnGreen.push(btnGreen);
-        document.querySelector(".wraper").innerHTML += btnGreen.elementHTML;
+        wrapper.appendChild(btnGreen.element);
     }
-    for (let i = 0; i < arrOfBtnGreen.length; i++) {
+    for (const btnGreen of arrOfBtnGreen) {
         while (true) {
-            arrOfBtnGreen[i].x = Math.random() * 60 + 20;
-            arrOfBtnGreen[i].y = Math.random() * 60 + 20;
-            if (Math.abs(btnRed.x - arrOfBtnGreen[i].x) > (btnRed.radius + btnGreen.radius) || Math.abs(btnRed.y - arrOfBtnGreen[i].y) > (btnRed.radius + btnGreen.radius)) {
+            btnGreen.x = Math.random() * 60 + 20;
+            btnGreen.y = Math.random() * 60 + 20;
+            if (Math.abs(btnRed.x - btnGreen.x) > (btnRed.radius + btnGreen.radius) || Math.abs(btnRed.y - btnGreen.y) > (btnRed.radius + btnGreen.radius)) {
                 break;
             }
         }
@@ -76,9 +77,9 @@ function showBtns() {
     btnRed.element.style.top = btnRed.y + "%";
     btnRed.element.style.left = btnRed.x + "%";
     document.querySelector(".count").innerHTML = "Score: " + count;
-    for (const i of arrOfBtnGreen) {
-        btnGreen.element[i].style.top = arrOfBtnGreen[i].y + "%";
-        btnGreen.element[i].style.left = arrOfBtnGreen[i].x + "%";
+    for (const btnGreen of arrOfBtnGreen) {
+        btnGreen.element.style.top = btnGreen.y + "%";
+        btnGreen.element.style.left = btnGreen.x + "%";
     }
 }
 
