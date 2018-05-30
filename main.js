@@ -2,11 +2,12 @@
 let count = 0;
 let topScore = 0;
 let sec = 0;
-const arrOfBtnGreen = [];
+let gameInterval;
+let arrOfBtnGreen = [];
 const firstLoad = document.querySelectorAll(".first-load");
-const wrapper = document.querySelector(".wraper");
+const wrapper = document.querySelector(".wrapper");
 function startTimer() {
-    let x = setInterval(function () {
+    gameInterval = setInterval(function () {
         sec--;
         document.querySelector(".timer").innerHTML = "time: " + sec + "s";
         if (sec <= 5) {
@@ -17,7 +18,7 @@ function startTimer() {
         }
         if (sec <= 0) {
             showGameOverScreen();
-            clearInterval(x);
+            clearInterval(gameInterval);
         }
     }, 1000);
 }
@@ -46,8 +47,8 @@ function moveBtnRed() {
 function moveBtnGreen() {
     if (count % 10 === 0) {
         let btnElement = document.createElement('DIV');
-        btnElement.setAttribute('class','btn-green');
-        btnElement.setAttribute('onclick','showGameOverScreen()');
+        btnElement.setAttribute('class', 'btn-green');
+        btnElement.setAttribute('onclick', 'showGameOverScreen()');
         let btnGreen = {
             element: btnElement,
             x: 0,
@@ -92,7 +93,7 @@ function restart() {
     if (count > topScore) {
         topScore = count;
     }
-    clearInterval(x);
+    clearInterval(gameInterval);
     sec = 0;
     count = 0;
     btnRed.x = 50;
@@ -105,7 +106,7 @@ function showNewGame() {
     document.querySelector(".top-score").innerHTML = "top score: " + topScore;
     document.querySelector(".timer").innerHTML = " ";
     document.querySelector(".game-over-score").style.display = "none";
-    document.querySelector(".wraper").innerHTML = " ";
+    wrapper.innerHTML = " ";
     document.querySelector(".count").innerHTML = "Score: " + count;
     document.querySelector(".new-game").style.display = "block";
     btnRed.element.style.top = btnRed.y + "%";
